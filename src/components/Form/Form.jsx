@@ -4,7 +4,7 @@ import { Forms, Input, Label, Button } from './Form.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addContact } from 'redux/contacts/contacts-slice';
+import * as contactsOperations from 'redux/contacts/contactsOperations';
 
 export function Form() {
   const [name, setName] = useState('');
@@ -43,7 +43,7 @@ export function Form() {
     if (isDublicate(contact)) {
       return alert(`${contact.name} is already in Phonebook List`);
     }
-    dispatch(addContact(contact));
+    dispatch(contactsOperations.addContacts(contact));
   };
   return (
     <Forms onSubmit={handleSubmit}>
