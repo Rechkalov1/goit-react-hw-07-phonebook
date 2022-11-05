@@ -1,8 +1,8 @@
-const getFilterContacts = ({ phoneBook }) => {
-  const { contacts, filter } = phoneBook;
+const getFilterContacts = state => {
+  const { contacts, filter } = state;
   const normalizedFilter = filter.toLocaleLowerCase();
   if (!filter) {
-    return contacts;
+    return contacts.items;
   }
   const filteredContact = contacts.filter(({ name }) => {
     const normalizedName = name.toLocaleLowerCase();

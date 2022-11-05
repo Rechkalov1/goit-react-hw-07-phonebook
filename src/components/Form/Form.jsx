@@ -5,12 +5,13 @@ import { Forms, Input, Label, Button } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as contactsOperations from 'redux/contacts/contactsOperations';
+import { getFilter } from 'redux/filter/selectorF';
 
 export function Form() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const phoneBook = useSelector(state => state.phoneBook);
-  const { contacts } = phoneBook;
+  const contacts = useSelector(getFilter);
+
   const dispatch = useDispatch();
   const nameId = nanoid();
   const phoneId = nanoid();
