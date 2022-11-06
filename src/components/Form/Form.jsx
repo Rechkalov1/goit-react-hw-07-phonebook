@@ -18,7 +18,7 @@ export function Form() {
   const phoneId = nanoid();
 
   const isDublicate = contact => {
-    const result = contacts.find(item => item.name === contact.name);
+    const result = contacts.some(item => item.name === contact.name);
     return result;
   };
   const handleChange = e => {
