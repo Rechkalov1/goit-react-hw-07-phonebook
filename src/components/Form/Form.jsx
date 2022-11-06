@@ -5,12 +5,13 @@ import { Forms, Input, Label, Button } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as contactsOperations from 'redux/contacts/contactsOperations';
-import { getFilter } from 'redux/filter/selectorF';
+
+import getFilterContacts from 'redux/contacts/selectorC';
 
 export function Form() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const contacts = useSelector(getFilter);
+  const contacts = useSelector(getFilterContacts);
 
   const dispatch = useDispatch();
   const nameId = nanoid();
@@ -39,12 +40,12 @@ export function Form() {
       name,
       phone,
     };
-    setName('');
-    setPhone('');
     if (isDublicate(contact)) {
       return alert(`${contact.name} is already in Phonebook List`);
     }
     dispatch(contactsOperations.addContacts(contact));
+    setName('');
+    setPhone('');
   };
   return (
     <Forms onSubmit={handleSubmit}>
