@@ -13,7 +13,7 @@ export function ContactList() {
   const elements = items.map(({ name, phone, id }) => {
     return (
       <Li key={id}>
-        Name :{name} Phone :{phone}
+        {name}:{phone}
         <Button onClick={() => dispatch(contactsOperations.removeContacts(id))}>
           Delete
         </Button>

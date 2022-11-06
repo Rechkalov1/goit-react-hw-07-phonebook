@@ -17,6 +17,10 @@ export const Li = styled.li`
   display: flex;
   font-size: 14px;
   font-weight: 700;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Button = styled.button`

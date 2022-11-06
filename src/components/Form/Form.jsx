@@ -38,7 +38,7 @@ export function Form() {
     e.preventDefault();
     const contact = {
       name,
-      phone,
+      phone: phone,
     };
     if (isDublicate(contact)) {
       return alert(`${contact.name} is already in Phonebook List`);
