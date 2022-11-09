@@ -12,7 +12,7 @@ export const FilterContact = () => {
   const handleChange = e => {
     dispatch(setFilter(e.target.value));
   };
-
+console.log(filter)
   return (
     <Input
       id={filterId}
